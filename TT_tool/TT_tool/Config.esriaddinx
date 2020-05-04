@@ -1,0 +1,32 @@
+﻿<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>TravelTime</Name>
+  <AddInID>{00c98801-a4a2-462a-97e6-b0ca81da116f}</AddInID>
+  <Description>Calculate Travel Time</Description>
+  <Version>1.0.24</Version>
+  <Image>Images\TravelTime.png</Image>
+  <Author>Paul Hedlund</Author>
+  <Company>Houston Engineering Inc.</Company>
+  <Date>4/30/2020</Date>
+  <Targets>
+    <Target name="Desktop" version="10.6" />
+  </Targets>
+  <AddIn language="CLR" library="TT_tool.dll" namespace="TravelTime">
+    <ArcMap>
+      <Commands>
+        <Button id="Houston_Engineering_Inc_TravelTime_clsTravelTime" onDemand="false" class="clsTravelTime" message="" caption="Travel Time" tip="" category="Add-In Controls" image="Images\clsTravelTime.png" />
+      </Commands>
+      <Toolbars>
+        <Toolbar id="traveltime" caption="HEI Travel Time" showInitially="true">
+          <Items>
+            <Button refID="Houston_Engineering_Inc_TravelTime_clsTravelTime" />
+          </Items>
+        </Toolbar>
+      </Toolbars>
+      <Extensions>
+        <Extension id="Houston_Engineering_Inc_TravelTime_clsExtensionTT" class="clsExtensionTT" productName="Travel Time Extension" autoLoad="true">
+          <Description>Travel Time Extension</Description>
+        </Extension>
+      </Extensions>
+    </ArcMap>
+  </AddIn>
+</ESRI.Configuration>
